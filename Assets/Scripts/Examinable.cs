@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class Examinable : MonoBehaviour
 {
+    [SerializeField] private Transform _originalParent;
     [SerializeField] private float _rotSpeed = 0.5f;
     [SerializeField] private float _examinedScale = 0.1f;
     
@@ -52,7 +53,7 @@ public class Examinable : MonoBehaviour
 
     private void ReturnToWorld()
     {
-        transform.parent = null;
+        transform.parent = _originalParent;
         transform.position = _returnPos;
         transform.rotation = _returnRot;
         transform.localScale = _returnScale;
