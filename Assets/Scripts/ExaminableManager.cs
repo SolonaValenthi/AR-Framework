@@ -1,7 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.XR.Interaction.Toolkit.AR;
 
 public class ExaminableManager : MonoBehaviour
 {
@@ -17,10 +16,10 @@ public class ExaminableManager : MonoBehaviour
         }
     }
 
-    [SerializeField] private ARPlacementInteractable _placement;
-    [SerializeField] private Transform _examineTarget;
+    public delegate void ModeSwitch(bool placementMode);
+    public static event ModeSwitch modeSwitched;
 
-    private GameObject _lastPlaceable;
+    [SerializeField] private Transform _examineTarget;
 
     public bool isExamining { get; private set; } = false;
 
@@ -34,18 +33,15 @@ public class ExaminableManager : MonoBehaviour
         isExamining = true;
         target.position = _examineTarget.position;
         target.parent = _examineTarget;
-        
-        if (_placement.isActiveAndEnabled)
-        {
-            _lastPlaceable = _placement.placementPrefab;
-            _placement.placementPrefab = null;
-        }
     }
 
     public void EndExamination()
     {
         isExamining = false;
-        if (_placement.isActiveAndEnabled)
-            _placement.placementPrefab = _lastPlaceable;
+    }
+
+    public void SwitchMode(bool placementMode)
+    {
+        modeSwitched?.Invoke(placementMode);
     }
 }

@@ -134,7 +134,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_InteractionManager: {fileID: 0}
   m_Colliders:
-  - {fileID: 0}
+  - {fileID: 1168869125619395825}
   m_InteractionLayerMask:
     serializedVersion: 2
     m_Bits: 4294967295
@@ -171,10 +171,34 @@ MonoBehaviour:
       m_Calls: []
   m_SelectEntered:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 7678985862453587221}
+        m_TargetAssemblyTypeName: Examinable, Assembly-CSharp
+        m_MethodName: Examine
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   m_SelectExited:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 7678985862453587221}
+        m_TargetAssemblyTypeName: Examinable, Assembly-CSharp
+        m_MethodName: Unexamine
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   m_FirstFocusEntered:
     m_PersistentCalls:
       m_Calls: []
@@ -241,7 +265,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_InteractionManager: {fileID: 0}
   m_Colliders:
-  - {fileID: 0}
+  - {fileID: 1168869125619395825}
   m_InteractionLayerMask:
     serializedVersion: 2
     m_Bits: 4294967295
@@ -352,7 +376,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_InteractionManager: {fileID: 0}
   m_Colliders:
-  - {fileID: 0}
+  - {fileID: 1168869125619395825}
   m_InteractionLayerMask:
     serializedVersion: 2
     m_Bits: 4294967295
@@ -460,7 +484,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_InteractionManager: {fileID: 0}
   m_Colliders:
-  - {fileID: 0}
+  - {fileID: 1168869125619395825}
   m_InteractionLayerMask:
     serializedVersion: 2
     m_Bits: 4294967295
@@ -751,7 +775,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8166192833238115105}
   serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 1, z: 0, w: 0}
   m_LocalPosition: {x: 0, y: 0.0749, z: 0}
   m_LocalScale: {x: 1.2, y: 1.2, z: 1.2}
   m_ConstrainProportionsScale: 0
@@ -760,7 +784,7 @@ Transform:
   - {fileID: 442319335115611357}
   - {fileID: 2390313836267705307}
   m_Father: {fileID: 4818934080070840372}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 180, z: 0}
 --- !u!33 &4442939688183116836
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -846,7 +870,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _originalParent: {fileID: 4818934080070840372}
   _rotSpeed: 0.5
-  _examinedScale: 0.1
+  _examinedScale: 1.3
+  _posManip: {fileID: 1744384610519530349}
+  _rotManip: {fileID: 1389034368828760660}
+  _scaleManip: {fileID: 1457903165164500237}
 --- !u!1 &9085874124816880802
 GameObject:
   m_ObjectHideFlags: 0

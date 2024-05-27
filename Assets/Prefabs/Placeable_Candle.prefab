@@ -83,6 +83,57 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!1 &6051214971840681695
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 6900785121968386944}
+  - component: {fileID: 8833182708044928182}
+  m_Layer: 0
+  m_Name: Rotate_Point
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &6900785121968386944
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6051214971840681695}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0.0722, z: 0}
+  m_LocalScale: {x: 0.3, y: 0.3, z: 0.3}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 4592359068434648485}
+  m_Father: {fileID: 2343188628655377595}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &8833182708044928182
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6051214971840681695}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b67babb1a3f83944ea67ebaf1c3b2124, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _originalParent: {fileID: 2343188628655377595}
+  _rotSpeed: 0.5
+  _examinedScale: 0.25
+  _posManip: {fileID: 1420806246509461541}
+  _rotManip: {fileID: 6513064232647146817}
+  _scaleManip: {fileID: 6403248384174645145}
 --- !u!1 &7026539595770389232
 GameObject:
   m_ObjectHideFlags: 0
@@ -116,7 +167,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 4592359068434648485}
+  - {fileID: 6900785121968386944}
   - {fileID: 4156761151632514592}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -171,10 +222,34 @@ MonoBehaviour:
       m_Calls: []
   m_SelectEntered:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 8833182708044928182}
+        m_TargetAssemblyTypeName: Examinable, Assembly-CSharp
+        m_MethodName: Examine
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   m_SelectExited:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 8833182708044928182}
+        m_TargetAssemblyTypeName: Examinable, Assembly-CSharp
+        m_MethodName: Unexamine
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   m_FirstFocusEntered:
     m_PersistentCalls:
       m_Calls: []
@@ -569,7 +644,6 @@ GameObject:
   - component: {fileID: 2484404638716316703}
   - component: {fileID: 4930171364878347249}
   - component: {fileID: 6424862309407297034}
-  - component: {fileID: 6744691703712022230}
   m_Layer: 0
   m_Name: Candlestick_01
   m_TagString: Untagged
@@ -586,11 +660,11 @@ Transform:
   m_GameObject: {fileID: 7422443101162513758}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.3, y: 0.3, z: 0.3}
+  m_LocalPosition: {x: 0, y: -0.234, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 2343188628655377595}
+  m_Father: {fileID: 6900785121968386944}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!33 &2484404638716316703
 MeshFilter:
@@ -663,18 +737,3 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 0.62666506, y: 0.47382137, z: 0.21679984}
   m_Center: {x: 0.0027254224, y: 0.23691069, z: 0}
---- !u!114 &6744691703712022230
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7422443101162513758}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b67babb1a3f83944ea67ebaf1c3b2124, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _originalParent: {fileID: 2343188628655377595}
-  _rotSpeed: 0.5
-  _examinedScale: 0.1

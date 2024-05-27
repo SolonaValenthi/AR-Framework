@@ -22,6 +22,7 @@ public class UIManager : MonoBehaviour
     [SerializeField] private GameObject _modelSelector;
     [SerializeField] private TMP_Text _currentMode;
     [SerializeField] private TMP_Text _currentPlacement;
+    [SerializeField] private GameObject _errorText;
 
     private bool _placementMode = true;
 
@@ -47,6 +48,7 @@ public class UIManager : MonoBehaviour
             _currentMode.text = "Examination Mode";
 
         _modelSelector.SetActive(_placementMode);
+        ExaminableManager.Instance.SwitchMode(_placementMode);
     }
 
     public void SelectModel(int modelID)
@@ -69,5 +71,20 @@ public class UIManager : MonoBehaviour
                 Debug.LogError("Invalid Model ID");
                 break;
         }
+    }
+
+    public void Examination(bool examining)
+    {
+        _sceneMenu.SetActive(!examining);
+    }
+
+    public void PlacementError()
+    {
+        _errorText.SetActive(true);
+    }
+
+    public bool GetMode()
+    {
+        return _placementMode;
     }
 }
