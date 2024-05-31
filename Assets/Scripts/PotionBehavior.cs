@@ -4,21 +4,27 @@ using UnityEngine;
 
 public class PotionBehavior : MonoBehaviour
 {
+    [SerializeField] private GameObject _emitter;
+    
     Material _mat;
+    Animator _anim;
 
     // Start is called before the first frame update
     void Start()
     {
         _mat = GetComponent<MeshRenderer>().material;
+        _anim = GetComponent<Animator>();
     }
 
     public void Activate()
     {
-        _mat.SetColor("_EmissionColor", Color.white);
+        _anim.SetTrigger("Open");
+        _emitter.SetActive(true);
     }
 
     public void Deactivate()
     {
-        _mat.SetColor("_EmissionColor", Color.black);
+        _anim.SetTrigger("Close");
+        _emitter.SetActive(false);
     }
 }
