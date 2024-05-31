@@ -3804,6 +3804,7 @@ MonoBehaviour:
   - {fileID: 2546957483550507561, guid: 7618ad2f1a948094a80f6de6a38ba509, type: 3}
   - {fileID: 708858383875094270, guid: 9deca9e22be3197498ef21281da91d89, type: 3}
   - {fileID: 519066701861840283, guid: 4e8e8b21fc4e1434ab7ef60d28278872, type: 3}
+  _planeMat: {fileID: 2100000, guid: d373a1f5ce7287c46a1b4df312803194, type: 2}
 --- !u!4 &1095756584
 Transform:
   m_ObjectHideFlags: 0

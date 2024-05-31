@@ -9,9 +9,17 @@ public class PlacementSelector : MonoBehaviour
 
     [SerializeField] private ARPlacementInteractable _placement;
     [SerializeField] private GameObject[] _placeables;
+    [SerializeField] private Material _planeMat;
 
     private bool[] _placed = { false, false, false, false };
     private int _selected;
+
+    Color _planeColor;
+
+    void Start()
+    {
+        _planeColor = _planeMat.color;
+    }
 
     public void SelectPlaceable(int ID)
     {
@@ -20,6 +28,7 @@ public class PlacementSelector : MonoBehaviour
             _selected = ID;
             _placement.placementPrefab = _placeables[ID];
             _placement.enabled = true;
+            _planeMat.color = _planeColor;
         }
         else
         {
@@ -33,5 +42,6 @@ public class PlacementSelector : MonoBehaviour
         _placed[_selected] = true;
         _placement.placementPrefab = null;
         _placement.enabled = false;
+        _planeMat.color = Color.clear;
     }
 }
