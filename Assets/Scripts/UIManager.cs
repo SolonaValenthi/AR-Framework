@@ -37,7 +37,7 @@ public class UIManager : MonoBehaviour
         _sceneMenu.SetActive(true);
         _mainMenu.SetActive(false);
     }
-
+    
     public void SwitchMode()
     {
         _placementMode = !_placementMode;

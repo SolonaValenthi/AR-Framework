@@ -36,6 +36,7 @@ public class Examinable : MonoBehaviour
     void OnEnable()
     {
         ExaminableManager.modeSwitched += ModeSwitch;
+        GameManager.removeModels += RemoveObject;
     }
 
     public void Examine()
@@ -83,8 +84,15 @@ public class Examinable : MonoBehaviour
         _scaleManip.enabled = placementMode;
     }
 
+    private void RemoveObject()
+    {
+        Unexamine();
+        Destroy(this.gameObject);
+    }
+
     void OnDisable()
     {
         ExaminableManager.modeSwitched -= ModeSwitch;
+        GameManager.removeModels -= RemoveObject;
     }
 }

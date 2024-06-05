@@ -21,6 +21,11 @@ public class PlacementSelector : MonoBehaviour
         _planeColor = _planeMat.color;
     }
 
+    private void OnEnable()
+    {
+        GameManager.removeModels += RemoveObjects;
+    }
+
     public void SelectPlaceable(int ID)
     {
         if (!_placed[ID])
@@ -43,5 +48,19 @@ public class PlacementSelector : MonoBehaviour
         _placement.placementPrefab = null;
         _placement.enabled = false;
         _planeMat.color = Color.clear;
+    }
+
+    private void RemoveObjects()
+    {
+        for (int i = 0; i < _placed.Length; i++)
+        {
+            _placed[i] = false;
+        }
+    }
+
+    private void OnDisable()
+    {
+        GameManager.removeModels -= RemoveObjects;
+        _planeMat.color = _planeColor;
     }
 }
