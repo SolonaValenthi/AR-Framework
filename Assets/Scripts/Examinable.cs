@@ -5,6 +5,8 @@ using UnityEngine.XR.Interaction.Toolkit.AR;
 
 public class Examinable : MonoBehaviour
 {
+    // Generic behaviour shared by all examinables.
+
     [SerializeField] private Transform _originalParent;
     [SerializeField] private float _rotSpeed = 0.5f;
     [SerializeField] private float _examinedScale = 0.1f;
